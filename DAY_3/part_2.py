@@ -1,10 +1,9 @@
 import re
 
-with open('miniInput.txt') as file:
+with open('input.txt') as file:
     content = file.read()
 
-# mul\([0-9]+,[0-9]+\)
-statements = re.findall("[(mul\([./d+,./d+\))(do\(\))(don't\(\))]", content)
+statements = re.findall(r"mul\(\d+,\d+\)|do\(\)|don't\(\)", content)
 print(statements)
 total = 0
 started = True
